@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white_2"
+	tools:context=".MainActivity">
+
+	<TextView
+		android:id="@+id/title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="15dp"
+		android:textColor="@color/grey"
+		android:textSize="25sp"
+		android:textStyle="bold"
+		android:text="@string/title"
+		android:gravity="center"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<androidx.appcompat.widget.SearchView
+		android:id="@+id/search_view"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:background="@drawable/custom_background_search_view"
+		android:layout_marginTop="25dp"
+		android:layout_marginHorizontal="10dp"
+		app:queryHint="@string/search_view_hint"
+		app:iconifiedByDefault="false"
+		app:queryBackground="@android:color/transparent"
+		app:layout_constraintTop_toBottomOf="@+id/title"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/history_btn"/>
+
+	<androidx.appcompat.widget.AppCompatButton
+		android:id="@+id/history_btn"
+		android:layout_width="60dp"
+		android:layout_height="0dp"
+		android:layout_marginEnd="10dp"
+		android:textColor="@color/grey"
+		android:textSize="10sp"
+		android:text="@string/record"
+		android:background="@android:color/transparent"
+		android:drawableTop="@android:drawable/ic_menu_recent_history"
+		android:stateListAnimator="@null"
+		app:layout_constraintTop_toTopOf="@+id/search_view"
+		app:layout_constraintBottom_toBottomOf="@+id/search_view"
+		app:layout_constraintStart_toEndOf="@+id/search_view"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+	<TextView
+		android:id="@+id/name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="30dp"
+		android:textColor="@color/grey"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/search_view"
+		android:visibility="gone"
+		tools:text="Nombre"/>
+
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/result_list"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_margin="15dp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/name"
+		app:layout_constraintBottom_toBottomOf="parent"
+		android:visibility="gone"/>
+
+	<TextView
+		android:id="@+id/message_error"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textColor="@color/grey"
+		android:textSize="20sp"
+		android:text="@string/api_error"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:visibility="gone"/>
+
+	<ProgressBar
+		android:id="@+id/progress_bar"
+		style="?android:attr/progressBarStyle"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:visibility="gone"/>
+
+	<FrameLayout
+		android:id="@+id/content_overlay_layout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:fitsSystemWindows="true"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

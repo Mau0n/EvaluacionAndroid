@@ -1,0 +1,11 @@
+<resources>
+	<string name="app_name">Evaluación Android</string>
+	<string name="title">Predicción de la nacionalidad de un nombre</string>
+	<string name="search_view_hint">Ingrese nombre</string>
+	<string name="record">Historial</string>
+	<string name="api_error">Error en el servicio</string>
+	<string name="without_result">Sin resultados</string>
+	<string name="record_title">Historial de búsqueda</string>
+	<string name="empty_record">Historial vacío</string>
+	<string name="back">&lt;</string>
+</resources>
